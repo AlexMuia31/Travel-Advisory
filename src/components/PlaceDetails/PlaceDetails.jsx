@@ -7,8 +7,10 @@ import { Rating } from '@material-ui/lab'
 
 import useStyles from './styles';
 
-const PlaceDetails = ({ place }) => {
+const PlaceDetails = ({ place, selected, refProp }) => {
     const classes = useStyles();
+    if (selected) refProp?.current?.scrollIntoView({ behavior: "smooth", block: "start" })
+
     return (
         <Card elevation={6}>
             <CardMedia
